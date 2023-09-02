@@ -5,9 +5,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: ["main", "cl"]
+    branches: ["main", "sc"]
   pull_request:
-    branches: ["main", "cl"]
+    branches: ["main", "sc"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
           wget -q $(curl 'https://api.github.com/repos/be5invis/Sarasa-Gothic/releases' | jq -r '.[0].assets | map(.browser_download_url) | map(select(test("sarasa-gothic-ttf-[0-9.]+\\.7z"))) | .[0]')
           7zr x sarasa-gothic-ttf-*.7z
           mkdir sarasa
-          mv sarasa-term-cl-*.ttf sarasa
+          mv sarasa-term-sc-*.ttf sarasa
  
 
       - name: Download Font Patcher
@@ -50,26 +50,26 @@ jobs:
       - name: Upload ttc.7z
         uses: actions/upload-artifact@v3
         with:
-          name: sarasa-term-cl-nerd.ttc.7z
-          path: sarasa-nerd/sarasa-term-cl-nerd.ttc.7z
+          name: sarasa-term-sc-nerd.ttc.7z
+          path: sarasa-nerd/sarasa-term-sc-nerd.ttc.7z
 
       - name: Upload ttf.7z
         uses: actions/upload-artifact@v3
         with:
-          name: sarasa-term-cl-nerd.ttf.7z
-          path: sarasa-nerd/sarasa-term-cl-nerd.ttf.7z
+          name: sarasa-term-sc-nerd.ttf.7z
+          path: sarasa-nerd/sarasa-term-sc-nerd.ttf.7z
 
       - name: Upload ttc.tar.gz
         uses: actions/upload-artifact@v3
         with:
-          name: sarasa-term-cl-nerd.ttc.tar.gz
-          path: sarasa-nerd/sarasa-term-cl-nerd.ttc.tar.gz
+          name: sarasa-term-sc-nerd.ttc.tar.gz
+          path: sarasa-nerd/sarasa-term-sc-nerd.ttc.tar.gz
 
       - name: Upload ttf.tar.gz
         uses: actions/upload-artifact@v3
         with:
-          name: sarasa-term-cl-nerd.ttf.tar.gz
-          path: sarasa-nerd/sarasa-term-cl-nerd.ttf.tar.gz
+          name: sarasa-term-sc-nerd.ttf.tar.gz
+          path: sarasa-nerd/sarasa-term-sc-nerd.ttf.tar.gz
 
       - name: Build Gothic and UI TTC
         run: bash -xeu gothic.sh
