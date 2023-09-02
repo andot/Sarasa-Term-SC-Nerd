@@ -1,5 +1,5 @@
 #!/bin/bash -e
-python otf2otc.py -o sarasa-gothic-cl.ttc ./sarasa-gothic-cl-*.ttf
-python otf2otc.py -o sarasa-ui-cl.ttc ./sarasa-ui-cl-*.ttf
+python otf2otc.py -o sarasa-gothic-sc.ttc ./sarasa-gothic-sc-*.ttf
+python otf2otc.py -o sarasa-ui-sc.ttc ./sarasa-ui-sc-*.ttf
 
-7zr a -mx9 gothic.7z sarasa-{ui,gothic}-cl.ttc
+7zr a -mx9 gothic.7z sarasa-{ui,gothic}-sc.ttc
