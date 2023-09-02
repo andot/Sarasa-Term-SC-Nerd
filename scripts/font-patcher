@@ -512,7 +512,7 @@ class font_patcher:
         # dont trust 'font.familyname'
         familyname = fontname
         # FOR SARASA
-        familyname = "Sarasa Term CL"
+        familyname = "Sarasa Term SC"
         fallbackStyle = get_subfamily(font.fontname)
 
         # fullname (filename) can always use long/verbose font name, even in windows
@@ -627,7 +627,7 @@ class font_patcher:
         }
 
         projectInfo = (
-            "Patched with 'Sarasa Term CL Nerd Patcher' (https://github.com/laishulu/Sarasa-Term-SC-Nerd)\n\n"
+            "Patched with 'Sarasa Term SC Nerd Patcher' (https://github.com/laishulu/Sarasa-Term-SC-Nerd)\n\n"
             "* Version: " + version + "\n"
         )
 
@@ -1912,7 +1912,7 @@ def get_subfamily(fontname):
     return subFamily
 
 def chn(name):
-    return name.replace("Sarasa Term CL", "终端更纱黑体-传统")
+    return name.replace("Sarasa Term SC", "终端更纱黑体-简体")
 
 
 # FOR SARASA: build hdmx table
